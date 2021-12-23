@@ -1,0 +1,34 @@
+<div class="container">
+
+	<section>
+		<article>
+			<div class="header">
+                <div class="header__content">
+                    <p>{{pokemon.name | uppercase}}</p>
+                    <h5>weight: {{pokemon.weight}}</h5>
+                    <small>ABILITIES:</small>
+                    <li *ngFor="let item of pokemon.abilities" >{{item.ability.name }}</li>
+                </div>
+            </div>
+			<div class="content">
+                <div class="comeBackButtom">
+                    <button class="newsInfo__modifed" (click)="comeBack()"><- Come Back</button>
+                </div>
+                <div class="newsInfo">
+                    <div>
+                        <img [src]="pokemon.sprites.other.home?.front_default" class="newsInfo__img">
+                    </div>
+                    <div class="description_wrap">
+                        <p class="newsInfo__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet repellendus unde eveniet
+                             assumenda libero. Mollitia perferendis ex modi tenetur aspernatur voluptates nesciunt. Commodi
+                              dignissimos nemo laborum aperiam id sint.
+                        </p>
+                    </div>
+                   
+                </div>
+            </div>
+		</article>
+    </section>
+
+</div>

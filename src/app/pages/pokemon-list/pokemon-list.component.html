@@ -1,0 +1,24 @@
+<div class="container">
+  <section>
+    <article>
+      <div class="card-container">
+        <div class="content">
+          <h2>Falabella PokeApp</h2>
+          <div class="card-container">
+            <a
+              class="card"
+              (click)="shareUrl(item.url)"
+              [routerLink]="['/pokemonDetail/', item.name]"
+              *ngFor="let item of pokemons"
+            >
+              <p class="card__title">{{ item.name }}</p>
+            </a>
+		</div>
+		<div class="comeBackButtom">
+			<button class="newsInfo__modifed" (click)="loadMorePokemons()">o Load More</button>
+		</div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
