@@ -16,12 +16,10 @@ export class PokemonListComponent implements OnInit, OnDestroy, Payload {
   }>
   pokemonsSubscription: Subscription = new Subscription;
   loadMorePokemonsSubscription: Subscription = new Subscription;
-  nextPage: string;
   offset: number;
 
   constructor(private pokemonsService: PokemonsService) {
     this.pokemons = [];
-    this.nextPage = '';
     this.offset = 50;
   }
 
@@ -42,13 +40,14 @@ export class PokemonListComponent implements OnInit, OnDestroy, Payload {
     })
   }
 
-  shareUrl(url: string): void{
+  shareUrl(url: string): void {
     this.pokemonsService.shareUrlPokemon(url);
   }
 
-  addPokemons(pokemons: any) {
+  addPokemons(pokemons: any): void {
     const scrollingElement = (document.scrollingElement || document.body)
     scrollingElement.scrollTop = scrollingElement.scrollHeight;
+    
     pokemons.map((pokemon: { name: string; url: string; }) => {
       this.pokemons.push(pokemon);
     })

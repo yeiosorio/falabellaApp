@@ -58,7 +58,6 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
         },
         weight: weight
       }
-      console.log(this.pokemon);
     });
   }
 
